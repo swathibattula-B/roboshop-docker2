@@ -14,7 +14,7 @@ services:
     depends_on: 
     - redis
   frontend:
-    build: 
+    build: ./frontend
       dockerfile : frontend.Dockerfile
     image : battulaswathi/frontend:1.0.0
     container_name: frontend
