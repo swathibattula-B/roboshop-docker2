@@ -1,14 +1,12 @@
 services:
   catalogue:
-    build: 
-      dockerfile : catalogue.Dockerfile
+    build: ./catalogue
     image : battulaswathi/catalogue:1.0.0
     container_name: catalogue
     depends_on:
     - mongodb 
   user:
-    build: 
-      dockerfile : user.Dockerfile
+    build: ./user
     image : battulaswathi/user:1.0.0
     container_name: user
     depends_on: 
@@ -23,8 +21,7 @@ services:
     - catalogue
     - user
   mongodb:
-    build: 
-      dockerfile : mongodb.Dockerfile
+    build: ./mongodb
     image : battulaswathi/mongodb:1.0.0
     container_name: mongodb
   redis:
