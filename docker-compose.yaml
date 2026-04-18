@@ -31,19 +31,19 @@ services:
     image : battulaswathi/payment:1.0.0
     container_name: payment
     environment:
-        CART_HOST: "rabbitmq"
-        CART_PORT: "5672"
-        USER_HOST: "user"
-        USER_PORT: "8080"
-        AMQP_HOST: "rabbitmq"
-        AMQP_USER: "roboshop"
-        AMQP_PASSWORD: "roboshop123"
-    depends_on: 
+      CART_HOST: "cart"
+      CART_PORT: "8080"
+      USER_HOST: "user"
+      USER_PORT: "8080"
+      AMQP_HOST: "rabbitmq"
+      AMQP_USER: "roboshop"
+      AMQP_PASS: "roboshop123"
+    depends_on:
     - rabbitmq
     - cart
     - user
   frontend:
-    build: ./frontend
+    build : ./frontend
     image : battulaswathi/frontend:1.0.0
     container_name: frontend
     ports:
