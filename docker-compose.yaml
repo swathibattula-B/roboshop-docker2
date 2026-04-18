@@ -8,7 +8,7 @@ services:
     - mongodb 
   user:
     build: 
-      dockerfile :user.Dockerfile
+      dockerfile : user.Dockerfile
     image : battulaswathi/user:1.0.0
     container_name: user
     depends_on: 
