@@ -1,21 +1,21 @@
 services:
   catalogue:
     build: 
-      dockerfile = catalogue.Dockerfile
+      dockerfile : catalogue.Dockerfile
     image : battulaswathi/catalogue:1.0.0
     container_name: catalogue
     depends_on:
     - mongodb 
   user:
     build: 
-      dockerfile = user.Dockerfile
+      dockerfile :user.Dockerfile
     image : battulaswathi/user:1.0.0
     container_name: user
     depends_on: 
     - redis
   frontend:
     build: 
-      dockerfile = frontend.Dockerfile
+      dockerfile : frontend.Dockerfile
     image : battulaswathi/frontend:1.0.0
     container_name: frontend
     depends_on: 
@@ -23,7 +23,7 @@ services:
     - user
   mongodb:
     build: 
-      dockerfile = mongodb.Dockerfile
+      dockerfile :mongodb.Dockerfile
     image : battulaswathi/mongodb:1.0.0
     container_name: mongodb
   redis:
