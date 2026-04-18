@@ -15,7 +15,6 @@ services:
     - redis
   frontend:
     build: ./frontend
-      dockerfile : frontend.Dockerfile
     image : battulaswathi/frontend:1.0.0
     container_name: frontend
     ports:
