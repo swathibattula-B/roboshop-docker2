@@ -26,7 +26,7 @@ services:
     depends_on: 
     - mysql
     - cart
-  Payment:
+  payment:
     build: ./payment
     image : battulaswathi/payment:1.0.0
     container_name: payment
@@ -43,7 +43,7 @@ services:
     - cart
     - user
   frontend:
-    build : ./frontend
+    build: ./frontend
     image : battulaswathi/frontend:1.0.0
     container_name: frontend
     ports:
