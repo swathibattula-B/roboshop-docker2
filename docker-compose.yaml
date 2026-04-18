@@ -6,11 +6,29 @@ services:
     container_name: catalogue
     depends_on:
     - mongodb 
+  user:
+    build: 
+      dockerfile = user.Dockerfile
+    image : battulaswathi/user:1.0.0
+    container_name: user
+    depends_on: 
+    - redis
+  frontend:
+    build: 
+      dockerfile = frontend.Dockerfile
+    image : battulaswathi/frontend:1.0.0
+    container_name: frontend
+    depends_on: 
+    - catalogue
+    - user
   mongodb:
     build: 
       dockerfile = mongodb.Dockerfile
     image : battulaswathi/mongodb:1.0.0
     container_name: mongodb
+  redis:
+    image: redis:7.0
+    container_name: redis
 
 networks:
   default:
