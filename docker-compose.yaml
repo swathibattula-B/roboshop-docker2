@@ -23,7 +23,7 @@ services:
     - user
   mongodb:
     build: 
-      dockerfile :mongodb.Dockerfile
+      dockerfile : mongodb.Dockerfile
     image : battulaswathi/mongodb:1.0.0
     container_name: mongodb
   redis:
